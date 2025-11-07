@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Result - Marksheet</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body id="page-result">
+
+<header>
+  <h1>Marksheet & Analytics</h1>
+  <nav><a href="student.html">Back</a> <a href="index.html">Home</a></nav>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2 id="resTitle">Result</h2>
+    <table id="marksTable">
+      <thead>
+        <tr>
+          <th>#</th><th>Code</th><th>Subject</th><th>Max</th><th>Marks</th><th>Grade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p style="margin-top:10px;">
+      Total: <strong id="totalMarks">0</strong> / <strong id="totalMax">0</strong> —
+      Percentage: <strong id="percent">0.00</strong>%
+    </p>
+  </div>
+
+  <div class="card" id="marksheetCard" style="display:none;">
+    <h2>Attached Marksheet</h2>
+    <p class="small-text" id="marksheetName"></p>
+    <div id="marksheetPreview" style="margin:10px 0;"></div>
+    <a id="marksheetLink" class="btn" href="#" download>View / Download Marksheet</a>
+  </div>
+
+  <div class="card">
+    <h2>Performance Chart</h2>
+    <canvas id="marksChart" width="700" height="320"></canvas>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

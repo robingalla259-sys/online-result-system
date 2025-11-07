@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body id="page-admin">
+
+<header>
+  <h1>Admin Dashboard</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="admin-login.html">Logout</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <!-- ADD STUDENT -->
+  <div class="card">
+    <h2>Add New Student</h2>
+    <p class="small-text">Add a student before saving results.</p>
+
+    <div class="grid-2" style="margin-top:18px;">
+      <div>
+        <label class="small-text">Full Name</label>
+        <input id="addName" placeholder="Enter Student Full Name" />
+      </div>
+
+      <div>
+        <label class="small-text">Roll Number</label>
+        <input id="addRoll" placeholder="e.g., BBA23-101" />
+      </div>
+    </div>
+
+    <div style="margin-top:10px;">
+      <label class="small-text">Set Student Password</label>
+      <input id="addPass" type="password" placeholder="Enter Password" />
+    </div>
+
+    <button class="btn" id="addStudentBtn" style="margin-top:14px;">Add Student</button>
+  </div>
+
+  <!-- ADD RESULT -->
+  <div class="card">
+    <h2>Add Result</h2>
+
+    <label class="small-text">Roll Number</label>
+    <input id="resRoll" placeholder="Enter Roll Number" />
+
+    <div class="grid-2" style="margin-top:16px;">
+      <div>
+        <label class="small-text">Course</label>
+        <select id="resCourse">
+          <option value="">Select Course</option>
+          <option value="BBA">BBA</option>
+          <option value="BCA">BCA</option>
+          <option value="B.Tech CSE">B.Tech CSE</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="small-text">Semester</label>
+        <select id="resSem">
+          <option value="">Select Semester</option>
+        </select>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;">Subject Marks</h3>
+    <p class="small-text">Add subjects manually. Marks dropdown adjusts automatically.</p>
+
+    <div id="subjectsContainer" style="margin-top:12px;"></div>
+
+    <button class="btn outline" id="addSubjectBtn" type="button" style="margin-top:12px;">Add Subject</button>
+
+    <div style="margin-top:20px;">
+      <label class="small-text">Attach Marksheet (Optional) — PDF / JPG / PNG</label>
+      <input id="marksheetFile" type="file" accept=".pdf,image/*" />
+    </div>
+
+    <button class="btn" id="addResultBtn" style="margin-top:16px;">Save Result</button>
+  </div>
+
+  <!-- SYSTEM CONTROLS -->
+  <div class="card">
+    <h2>System Controls</h2>
+    <button class="btn" onclick="location.href='view-students.html'">View Students</button>
+    <button class="btn" id="loadDemoBtn" type="button">Load Demo Data</button>
+    <button class="btn outline" id="exportBtn" type="button">Export Data (JSON)</button>
+    <button class="btn danger" id="clearDataBtn" type="button">Clear All Data</button>
+
+    <p class="small-text" style="margin-top:6px;">All data is stored in browser localStorage.</p>
+  </div>
+
+</div>
+
+<!-- ✅ SCRIPT MUST BE AT THE END -->
+<script src="assets/app.js"></script>
+</body>
+</html>

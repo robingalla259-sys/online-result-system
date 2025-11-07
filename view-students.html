@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>All Students</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <h1>Registered Students</h1>
+  <nav><a href="admin.html">Back to Dashboard</a></nav>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Student Records</h2>
+
+    <table id="studentsTable">
+      <thead>
+        <tr>
+         <th>Roll Number</th>
+         <th>Name</th>
+         <th>Password</th>
+         <th>Results</th>
+         <th>View</th>
+         <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+  const students = getStudents();
+  const tbody = document.querySelector("#studentsTable tbody");
+  tbody.innerHTML = "";
+
+  if(students.length === 0){
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;">No students found.</td></tr>`;
+  } else {
+    students.forEach(stu => {
+      tbody.innerHTML += `
+        <tr>
+          <td>${stu.roll}</td>
+          <td>${stu.name}</td>
+          <td>
+            <span id="pass-${stu.roll}">******</span>
+            <button class="btn outline" style="padding:4px 10px;font-size:12px;"
+            onclick="togglePassword('${stu.roll}','${stu.password}')">Show</button>
+            </td>
+          <td>${stu.results.length}</td>
+          <td><button class="btn" onclick="openStudent('${stu.roll}')">View</button></td>
+          <td><button class="btn outline" onclick="deleteStudent('${stu.roll}')">Delete</button></td>
+        </tr>
+      `;
+    });
+  }
+</script>
+
+</body>
+</html>
