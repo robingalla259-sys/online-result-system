@@ -1,0 +1,254 @@
+/* ===== FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+*{
+  margin:0; padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
+
+/* ===== BACKGROUND ===== */
+body{
+  background:#f4f6fb;
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size:22px 22px; /* Subtle Pro Grid */
+  color:#1b1b1b;
+  line-height:1.6;
+}
+
+
+/* ===== HEADER ===== */
+header{
+  background:#ffffff;
+  border-bottom:1px solid #ccd6ee;
+  padding:18px 48px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+header h1{
+  font-size:22px;
+  font-weight:600;
+  color:#243b9f;
+}
+header nav a{
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:500;
+  color:#243b9f;
+}
+header nav a:hover{
+  color:#122874;
+}
+
+/* ===== PAGE CONTAINER ===== */
+.container{
+  max-width:1100px;
+  margin:80px auto;
+  padding:0 26px;
+}
+
+/* ===== CENTER LOGIN PAGE ===== */
+#login-center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:calc(100vh - 140px);
+}
+
+/* ===== CARD ===== */
+.card{
+  background:#ffffff;
+  border-radius:10px;
+  padding:30px;
+  border:1px solid #dde5f6;
+  margin-bottom:30px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+.card h2{
+  margin-bottom:6px;
+}
+
+/* ===== LABELS ===== */
+.small-text{
+  font-size:14px;
+  color:#575d6d;
+}
+
+/* ===== INPUTS & SELECT ===== */
+input, select{
+  width:100%;
+  padding:12px;
+  border-radius:6px;
+  border:1px solid #c7d0ea;
+  background:#ffffff;
+  margin-top:8px;
+  margin-bottom:14px;
+  transition:.25s;
+}
+input:focus, select:focus{
+  border-color:#243b9f;
+  outline:none;
+}
+
+/* ===== BUTTONS ===== */
+.btn{
+  background:#243b9f;
+  color:white;
+  padding:12px 20px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:500;
+}
+.btn:hover{
+  background:#16246f;
+}
+
+.btn.outline{
+  background:none;
+  border:2px solid #243b9f;
+  color:#243b9f;
+}
+.btn.outline:hover{
+  background:#243b9f;
+  color:white;
+}
+
+.btn.danger{
+  background:#d9534f;
+}
+.btn.danger:hover{
+  background:#a13c39;
+}
+
+/* ===== SUBJECT ROW ===== */
+.subject-row{
+  border:1px solid #d7dff5;
+  border-radius:8px;
+  padding:18px;
+  background:#f6f8ff;
+  margin-bottom:16px;
+}
+
+/* ===== TABLE ===== */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:18px;
+  border-radius:8px;
+  overflow:hidden;
+  text-align:center;
+}
+th{
+  background:#e9edff;
+  padding:14px;
+  font-weight:600;
+}
+td{
+  background:white;
+  padding:14px;
+  border-bottom:1px solid #e3e8fb;
+}
+tr:hover td{
+  background:#f5f7ff;
+}
+
+/* ===== GRID FORM ===== */
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .grid-2{ grid-template-columns:1fr; }
+}
+@media (max-width:600px){
+  th, td{ padding:12px; font-size:14px; }
+  .btn{ width:100%; margin-top:8px; }
+  .card{ padding:22px; }
+}
+.result-page .card{
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.12);
+}
+
+#marksTable{
+  width:100%;
+  border-collapse: collapse;
+}
+
+#marksTable th,#marksTable td{
+  border:1px solid #ccc;
+  padding: 10px;
+  text-align:center;
+}
+
+#marksChart{
+  margin-top:25px;
+  width:100% !important;
+  height:350px !important;
+}
+
+.info-box{
+  margin-top:20px;
+  font-size:15px;
+  border:1px solid #ddd;
+  padding:12px;
+  border-radius:6px;
+  background:#fafafa;
+}
+/* Global App Background */
+.app-body{
+  background:#f4f6fb;
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size:22px 22px;
+  min-height:100vh;
+}
+/* Fix View Button Overlap on Student Dashboard */
+.results-list .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #f7faff;
+  border: 1px solid #cfdfff;
+  border-radius: 10px;
+}
+
+/* Keep text from shrinking */
+.results-list .card strong {
+  flex: 1;
+  font-size: 16px;
+}
+
+/* Button Styling */
+.results-list .card button {
+  flex-shrink: 0;
+  background: #0057b7;
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.results-list .card button:hover {
+  background: #003f85;
+}
+
